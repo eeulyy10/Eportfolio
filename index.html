@@ -29,7 +29,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 4rem;background:rgba(245,240,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
 .nav-sig{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none;}
-.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.75rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:color .25s;}
 .nav-links a:hover{color:var(--accent);}
 
@@ -136,6 +136,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .blank-state-h{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--muted);margin-bottom:.5rem;}
 .blank-state-p{font-size:.82rem;color:var(--muted);font-weight:300;max-width:360px;margin:0 auto;}
 
+/* ADDED: welcome, dates, term header, chips, placeholders */
+.hero-welcome{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--accent3);margin-bottom:.4rem;}
+.hero-program{font-family:var(--mono);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);margin:-.8rem 0 1.6rem;}
+.hero-p{font-size:.97rem;color:var(--ink2);max-width:520px;margin-bottom:.9rem;font-weight:300;line-height:1.85;}
+.hero-p + .pill-row{margin-top:1.8rem;}
+.art-date{font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:1px;margin:-.2rem 0 1rem;}
+.term-head{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:0 0 1.5rem;padding:1rem 1.4rem;background:var(--card);border:1px solid var(--line2);border-radius:var(--r);}
+.term-head h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;}
+.term-head span{font-family:var(--mono);font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);}
+.sub-h{font-family:var(--mono);font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:1.8rem 0 .7rem;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:5px 14px;border-radius:100px;font-size:.74rem;border:1px solid var(--line2);color:var(--ink2);background:var(--card);}
+.chip.g{border-color:rgba(61,90,71,.3);color:var(--accent);background:rgba(61,90,71,.06);}
+.goal-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.goal-list li{font-size:.9rem;color:var(--ink2);font-weight:300;padding-left:1.2rem;position:relative;}
+.goal-list li::before{content:'';position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent2);}
+.blank-state svg{width:40px;height:40px;opacity:.35;margin-bottom:1rem;color:var(--accent);}
+.blank-state a{color:var(--accent);}
+.ph-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;}
+.ph-grid .blank-state{padding:2.5rem 1.5rem;margin-bottom:0;}
+
 /* SKILLS */
 .skills-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;}
 .sk-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.35rem 1.5rem;transition:.25s;}
@@ -176,9 +197,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <a class="nav-sig" href="#home">Eulyses Edusma</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#ai1">AI 1</a></li>
-    <li><a href="#techno">Techno 101</a></li>
-    <li><a href="#skills">Skills</a></li>
+    <li><a href="#artifacts">Learning Artifacts</a></li>
+    <li><a href="#involvement">Involvement</a></li>
+    <li><a href="#achievements">Achievements &amp; Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -188,8 +209,11 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="hero-deco"></div>
   <div style="position:relative;z-index:1;max-width:680px;">
     <p class="eyebrow">ePortfolio</p>
+    <p class="hero-welcome">Welcome to my ePortfolio!</p>
     <h1>Eulyses<br><em>Edusma</em></h1>
-    <p class="hero-sub">Computer Engineering student with a passion for building intelligent systems and solving real-world problems through technology.</p>
+    <p class="hero-program">BS Computer Engineering</p>
+    <p class="hero-p">This ePortfolio is a digital collection of my class works, projects, involvements, and achievements as a Computer Engineering student.</p>
+    <p class="hero-p">Here you will see how I have grown as a learner, from my lab activities to the projects I am proud of, together with my reflections along the way.</p>
     <div class="pill-row">
       <span class="pill g">Computer Engineering</span>
       <span class="pill a">Artificial Intelligence</span>
@@ -197,7 +221,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <span class="pill">Researcher</span>
     </div>
     <div class="cta-row">
-      <a href="#ai1" class="btn btn-p">
+      <a href="#artifacts" class="btn btn-p">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         View My Works
       </a>
@@ -220,7 +244,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="about-grid fi">
     <div class="about-frame">
       <div class="about-photo">
-        <img src="Myself.png" alt="Eulyses Edusma">
+        <img src="Myself.jpg" alt="Eulyses Edusma">
       </div>
       <div class="corner">BSCpE</div>
     </div>
@@ -229,10 +253,24 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <p class="about-role">Computer Engineer · AI Student · Developer</p>
       <p class="about-p">I am a Computer Engineering student with a strong interest in Artificial Intelligence, machine learning, and software development. I enjoy building systems that are not only functional but meaningful.</p>
       <p class="about-p">This portfolio is a living record of my academic journey documenting my growth, projects, and the skills I continue to develop as I work toward becoming a professional computer engineer.</p>
+      <p class="sub-h">Relevant Background</p>
+      <p class="about-p">My coursework so far includes Artificial Intelligence 1 and 2, Technopreneurship 101, and Emerging Technologies, where I worked on projects such as a broccoli freshness classifier built with TensorFlow/Keras and Gradio.</p>
+      <p class="sub-h">Interests</p>
+      <div class="chips">
+        <span class="chip g">Artificial Intelligence</span>
+        <span class="chip g">Machine Learning</span>
+        <span class="chip g">Software Development</span>
+        <span class="chip g">Building practical, real-world systems</span>
+      </div>
+      <p class="sub-h">Goals</p>
+      <ul class="goal-list">
+        <li>Become a computer engineer who builds intelligent, deployable systems that are actually useful to people.</li>
+        <li>Contribute to the AI research community someday, and keep growing my technical and communication skills along the way.</li>
+      </ul>
       <div class="info-g">
         <div class="info-i"><div class="lbl">Program</div><div class="val">BS Computer Engineering</div></div>
         <div class="info-i"><div class="lbl">Specialization</div><div class="val">To be determined</div></div>
-        <div class="info-i"><div class="lbl">Year Level</div><div class="val">3rd Year</div></div>
+        <div class="info-i"><div class="lbl">Year Level</div><div class="val">4th Year</div></div>
         <div class="info-i"><div class="lbl">Status</div><div class="val" style="color:var(--accent);">● Active Student</div></div>
       </div>
     </div>
@@ -242,11 +280,33 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 <div class="hr"></div>
 
 <!-- ═══════════════════════════════════════════════
+     LEARNING ARTIFACTS (organized by school year, semester, course)
+═══════════════════════════════════════════════ -->
+<section id="artifacts" class="sec" style="padding-bottom:1rem;">
+  <div class="fi">
+    <p class="sec-lbl">Relevant Works</p>
+    <h2 class="sec-h">Learning Artifacts</h2>
+    <p class="sec-d">Organized by school year, semester, and course. Each artifact includes a description, the Student Outcomes it demonstrates, and my reflection.</p>
+  </div>
+  <div class="term-head fi"><h3>3rd Year</h3><span>SY 2025-2026</span></div>
+  <div class="course-tabs fi" style="margin-bottom:1.5rem;">
+    <a class="course-tab" href="#ai1">Artificial Intelligence 1</a>
+    <a class="course-tab" href="#techno">Technopreneurship 101</a>
+  </div>
+  <div class="term-head fi"><h3>1st Semester</h3><span>4th Year · SY 2026-2027</span></div>
+  <div class="course-tabs fi" style="margin-bottom:0;">
+    <a class="course-tab" href="#emtech">Emerging Technologies</a>
+    <a class="course-tab" href="#ai2">Artificial Intelligence 2</a>
+    <a class="course-tab" href="#seminars">Seminars and Field Trip</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
      ARTIFICIAL INTELLIGENCE 1
 ═══════════════════════════════════════════════ -->
-<section id="ai1" class="sec">
+<section id="ai1" class="sec" style="padding-top:3rem;">
   <div class="fi">
-    <p class="sec-lbl">Course Portfolio</p>
+    <p class="sec-lbl">3rd Year · SY 2025-2026</p>
     <h2 class="sec-h">Artificial Intelligence 1</h2>
     <p class="sec-d">Artifacts produced throughout the AI 1 course lab activities, research, source code, and a working prototype demonstrating applied intelligence.</p>
   </div>
@@ -255,6 +315,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c1 fi">
     <p class="art-meta">Artifact 01</p>
     <h3 class="art-h">Compilation of Lab Activities</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
     <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Performance Tasks</span><span class="art-tag">Lab Work</span></div>
     <p class="art-desc">All Performance Tasks and Lab Activities compiled into a single PDF showcasing hands-on application of AI and CpE concepts throughout the course.</p>
 
@@ -272,7 +333,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
         <div class="so-row on"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
@@ -291,7 +352,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <p class="wu-text">
         The compilation of lab activities directly addressed Student Outcomes A, B, E, I, and K. Each activity required me to apply mathematical and engineering principles to implement AI algorithms whether that was computing activation functions by hand, understanding gradient descent, or writing Python scripts for data manipulation (SO A). Every lab involved running experiments, observing outputs, and interpreting results, which sharpened my ability to analyze data critically (SO B). Debugging code, tracing through logic errors, and figuring out why a model was underperforming all contributed to my problem-solving skills as a computer engineer (SO E). I also learned to use essential modern tools like Jupyter Notebook, NumPy, Matplotlib, and TensorFlow/Keras tools that are industry-standard in AI development (SO K). Each activity built on the last, reinforcing the habit of continuous learning and self-improvement (SO I).
       </p>
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
       <p class="wu-text">
         Completing every lab activity even the ones that took hours of debugging solidified my confidence in working with AI tools and Python. My personal goal is to become a computer engineer who can build intelligent, real-world systems, and these activities gave me the technical foundation to pursue that. Getting hands-on with neural network concepts, data preprocessing, and model evaluation showed me that AI is not just theory it is something I can actually build. Each completed task gave me a small but meaningful sense of progress toward that bigger goal.
       </p>
@@ -302,6 +363,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c2 fi">
     <p class="art-meta">Artifact 02</p>
     <h3 class="art-h">Journal Article</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
     <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Research</span><span class="art-tag">Academic Writing</span></div>
     <p class="art-desc">A formal journal article produced as part of the course research requirement documenting methodology, findings, and analysis on an AI-related topic.</p>
 
@@ -319,7 +381,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
         <div class="so-row on"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
@@ -338,7 +400,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <p class="wu-text">
         Writing a journal article required the application of a wide range of student outcomes. I applied AI and engineering knowledge to frame the research problem and interpret findings (SO A, B). Identifying a relevant research gap and formulating a focused study question engaged my engineering problem-solving skills (SO E). The collaborative nature of the writing process coordinating with teammates on structure, citations, and revisions reflected real-world multidisciplinary teamwork (SO D). Proper citations, avoiding plagiarism, and presenting findings with honesty addressed professional and ethical responsibility (SO F, M). Structuring arguments clearly in formal academic language developed my written communication skills significantly (SO G). The article's topic also situates AI within broader societal impacts, acknowledging how technology affects everyday life and communities (SO H, J). Researching current literature reinforced my commitment to staying informed and learning continuously (SO I).
       </p>
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
       <p class="wu-text">
         Writing a formal journal article was one of the most challenging but rewarding parts of the course. My goal is to contribute to the AI research community someday, and this was a first step in understanding how academic work gets structured and communicated. It taught me how to find credible sources, synthesize ideas, and present an argument that holds up to scrutiny. Beyond the writing itself, it showed me that engineering is not just about building things it is also about communicating why those things matter. That perspective will shape how I approach future projects.
       </p>
@@ -349,6 +411,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c3 fi">
     <p class="art-meta">Artifact 03</p>
     <h3 class="art-h">AI Project Source Code</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
     <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Source Code</span><span class="art-tag">MobileNetV2</span><span class="art-tag">TensorFlow / Keras</span></div>
     <p class="art-desc">Source code for a broccoli freshness classification system a custom CNN and a MobileNetV2 transfer learning model trained to classify broccoli as Fresh, Wilted, Spoiled, or Not Broccoli. Exported from Jupyter Notebook and compiled as a PDF.</p>
 
@@ -366,7 +429,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
         <div class="so-row on"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
@@ -385,7 +448,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <p class="wu-text">
         Building the AI project source code was the most technically intensive artifact in this portfolio. It required applying deep knowledge of convolutional neural networks, image preprocessing pipelines, transfer learning, and model evaluation all grounded in mathematical and engineering principles (SO A). We designed and ran multiple experiments comparing a custom CNN against a MobileNetV2 transfer learning model, then analyzed accuracy curves, confusion matrices, and classification reports to interpret the results (SO B). Designing the full pipeline from dataset splitting to Gradio deployment and TFLite conversion required making real engineering decisions under constraints like limited training data and local hardware (SO C, E). The project was developed collaboratively as GROUP 2, with members dividing responsibilities across model architecture, data handling, evaluation, and deployment (SO D, L). The use of TensorFlow, Keras, scikit-learn, Gradio, and TFLite reflects the ability to leverage modern, industry-relevant tools (SO K). The application itself — detecting whether broccoli is fresh or spoiled addresses a real-world food quality problem, demonstrating that AI engineering can have practical societal value (SO H, J).
       </p>
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
       <p class="wu-text">
         This project is the one I am most proud of from this semester. Going from raw image data to a deployed Gradio interface and a TFLite model that can run on a mobile device felt like a real engineering accomplishment. It showed me that I am capable of building a complete AI system end-to-end, not just running tutorial code. The fine-tuning phase using MobileNetV2 where validation accuracy hit 98.44% also made transfer learning feel concrete and real rather than just a concept in a lecture slide. Working as a group taught me how to coordinate technical decisions, resolve disagreements about approach, and deliver a working product together. This experience reinforced my goal of building practical, deployable AI systems as a future computer engineer.
       </p>
@@ -396,6 +459,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c4 fi">
     <p class="art-meta">Artifact 04</p>
     <h3 class="art-h">AI Project Demo Video</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
     <div class="art-tags"><span class="art-tag">Video</span><span class="art-tag">Prototype</span><span class="art-tag">Working Model</span></div>
     <p class="art-desc">Video demonstration of the working broccoli freshness classifier showing the Gradio interface classifying real images in real time with confidence scores.</p>
 
@@ -409,7 +473,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
       <div class="so-list">
         <div class="so-row"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
         <div class="so-row"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
@@ -428,7 +492,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
       <p class="wu-text">
         The demo video documents the working prototype in action going beyond written code to show a real, functioning system. Presenting a live classifier that accepts any uploaded image and returns a prediction with a confidence percentage demonstrates that the engineered system actually works as designed (SO C, E). The demo also communicates the project clearly to an audience who may not read code, which is an important professional skill (SO G). Seeing the model correctly identify fresh broccoli from spoiled or wilted ones and even reject non-broccoli images illustrates the real-world applicability of the system in areas like food safety and quality control (SO H, J). The demo reflects the team's ability to coordinate and deliver a complete, working product (SO D, L, M). Using Gradio as a deployment tool and TFLite for mobile conversion shows the effective use of modern engineering tools (SO K).
       </p>
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
       <p class="wu-text">
         Recording and presenting the demo video pushed me to think about my project not just as code but as something a real person would use. That shift in perspective from developer to user is something I want to carry into every project going forward. My goal is to build technology that is actually useful to people, not just technically impressive on paper. Seeing the model perform in real time, classifying images confidently and correctly, gave me tangible proof that I am building the right skills. It also made me more comfortable presenting technical work, which is a skill I know I need to keep developing.
       </p>
@@ -443,7 +507,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
 ═══════════════════════════════════════════════ -->
 <section id="techno" class="sec">
   <div class="fi">
-    <p class="sec-lbl">Course Portfolio</p>
+    <p class="sec-lbl">3rd Year · SY 2025-2026</p>
     <h2 class="sec-h">Technopreneurship 101</h2>
     <p class="sec-d">Artifacts and outputs from Technopreneurship 101 — where engineering meets entrepreneurship, innovation, and real-world venture building.</p>
   </div>
@@ -452,6 +516,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c1 fi">
     <p class="art-meta">Artifact 01</p>
     <h3 class="art-h">Wadhwani Milestone 1–3</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
 
     <div class="art-tags">
       <span class="art-tag">PDF</span>
@@ -491,7 +556,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
 
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
 
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">C</div><span>Design a system, component or process to meet needs within realistic constraints.</span></div>
@@ -506,7 +571,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
         Completing the Wadhwani milestones helped develop important engineering and entrepreneurial skills. The activities required identifying real-world problems, analyzing user needs, and proposing practical technology-driven solutions (SO C, E). Working with teammates throughout the milestones strengthened collaboration, communication, and project coordination skills (SO D, G, L). The milestone process also emphasized understanding how technological solutions can create impact within communities and industries, reinforcing awareness of societal and business contexts (SO H).
       </p>
 
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
 
       <p class="wu-text">
         The Wadhwani milestones introduced me to the entrepreneurial side of technology development. As someone interested in building practical systems, this activity taught me that successful projects are not only technically functional but also valuable to real users. It improved my confidence in presenting ideas, validating solutions, and thinking critically about how technology can become a sustainable and impactful venture in the future.
@@ -518,6 +583,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c2 fi">
     <p class="art-meta">Artifact 02</p>
     <h3 class="art-h">MVP Demo</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
 
     <div class="art-tags">
       <span class="art-tag">Prototype</span>
@@ -544,7 +610,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
 
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
 
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">C</div><span>Design a system, component or process to meet needs within realistic constraints.</span></div>
@@ -558,7 +624,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
         Developing and presenting the MVP demonstrated the ability to transform concepts into a functional prototype under realistic limitations (SO C). The project required identifying user needs, solving technical issues, and refining features based on feedback (SO E). Collaboration among team members strengthened teamwork and project management skills (SO D). Presenting the MVP also improved communication skills by explaining technical concepts and system functionality clearly to an audience (SO G). The project utilized modern tools and technologies relevant to computer engineering practice (SO K).
       </p>
 
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
 
       <p class="wu-text">
         Creating the MVP gave me practical experience in turning an idea into something tangible and functional. It reinforced my interest in developing technology solutions that address real-world problems. Seeing the prototype work and demonstrating it to others motivated me to continue improving my technical and presentation skills as I work toward becoming a professional computer engineer and developer.
@@ -570,6 +636,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c3 fi">
     <p class="art-meta">Artifact 03</p>
     <h3 class="art-h">Final Pitch Deck</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
 
     <div class="art-tags">
       <span class="art-tag">PDF</span>
@@ -609,7 +676,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
 
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
 
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">D</div><span>Work effectively in multi-disciplinary and multi-cultural teams.</span></div>
@@ -623,7 +690,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
         The final pitch deck strengthened my ability to communicate technical and business ideas effectively (SO G). Preparing the presentation required analyzing current market needs and understanding how engineering solutions can address societal challenges (SO H, J). The activity also involved planning strategies, organizing information clearly, and collaborating with teammates to create a professional and persuasive presentation (SO D, L).
       </p>
 
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
 
       <p class="wu-text">
         Developing the final pitch deck improved my confidence in presenting ideas professionally and explaining technical concepts to different audiences. It taught me the importance of combining innovation with communication and business thinking. This experience helped me realize that strong technical skills become even more valuable when paired with the ability to pitch and present ideas effectively.
@@ -635,6 +702,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   <div class="art-card c4 fi">
     <p class="art-meta">Artifact 04</p>
     <h3 class="art-h">Video Pitch</h3>
+    <p class="art-date">3rd Year · SY 2025-2026</p>
 
     <div class="art-tags">
       <span class="art-tag">Video</span>
@@ -661,7 +729,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
     <div class="wu-wrap">
       <p class="wu-label">Write-ups</p>
 
-      <p class="so-title">a) Contribution to BSCpE Student Outcomes</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
 
       <div class="so-list">
         <div class="so-row on"><div class="so-badge">D</div><span>Work effectively in multi-disciplinary and multi-cultural teams.</span></div>
@@ -675,7 +743,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
         The video pitch demonstrated the ability to communicate ideas confidently and professionally to a wider audience (SO G). It highlighted the relevance of the proposed solution within current societal and technological challenges (SO H, J). Producing the presentation required teamwork, planning, and coordination among members to deliver a polished and organized final output (SO D). The activity also reflected professionalism, responsibility, and commitment throughout the development and presentation process (SO M).
       </p>
 
-      <p class="pg-title">b) Contribution to Personal Goals</p>
+      <p class="pg-title">Reflection</p>
 
       <p class="wu-text">
         Creating the video pitch helped me become more comfortable speaking about technical ideas in a clear and engaging way. It improved my confidence in public presentation and strengthened my ability to explain projects beyond just the technical side. This experience encouraged me to continue developing both my engineering knowledge and communication skills so I can effectively share future innovations with others.
@@ -684,6 +752,460 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
   </div>
 
 </section>
+<div class="hr"></div>
+
+<!-- ═══════════════════════════════════════════════
+     EMERGING TECHNOLOGIES
+═══════════════════════════════════════════════ -->
+<section id="emtech" class="sec">
+  <div class="fi">
+    <p class="sec-lbl">4th Year · 1st Semester · SY 2026-2027</p>
+    <h2 class="sec-h">Emerging Technologies</h2>
+    <p class="sec-d">Artifacts from Emerging Technologies: AWS lab activities, certification, and the final project.</p>
+  </div>
+
+  <div class="art-card c1 fi">
+    <p class="art-meta">Artifact 01</p>
+    <h3 class="art-h">Compilation of AWS Lab Activity &amp; Prelim Project</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">AWS</span><span class="art-tag">Cloud Computing</span><span class="art-tag">Lab Work</span></div>
+    <p class="art-desc">A compilation of my AWS lab activities and the Prelim Project for Emerging Technologies, documenting my hands-on work with cloud technologies.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent);"></div><span class="fname">Compilation of AWS Lab Activity &amp; Prelim Project</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1SaSqQX8SHfbvpiiPduiQN7evkUwEIj6T/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1SaSqQX8SHfbvpiiPduiQN7evkUwEIj6T/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
+        <div class="so-row on"><div class="so-badge">E</div><span>Identify, formulate and solve computer engineering problems.</span></div>
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        The AWS lab activities and the Prelim Project gave me practical experience applying computer engineering knowledge to cloud technologies (SO A). Following each lab meant working through technical instructions, troubleshooting configuration problems, and solving issues as they came up (SO E). The labs introduced me to AWS, a modern industry tool for building and managing cloud-based solutions (SO K), and pushed me to keep learning new technologies on my own (SO I).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        Completing these AWS labs showed me how modern applications are built and run on cloud services instead of only on a local machine. It strengthened my confidence in learning unfamiliar tools through hands-on practice, and it supports my goal of becoming a computer engineer who can build and deploy real-world systems.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c2 fi">
+    <p class="art-meta">Artifact 02</p>
+    <h3 class="art-h">Certificate of Completion / AWS Cloud Practitioner Certificate</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">Certificate</span><span class="art-tag">AWS</span><span class="art-tag">Cloud Computing</span></div>
+    <p class="art-desc">Certificate of completion and/or AWS Cloud Practitioner certificate earned in Emerging Technologies, serving as evidence of my foundational knowledge of cloud computing.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent2);"></div><span class="fname">Certificate of Completion / AWS Cloud Practitioner Certificate</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/12TTdQ86Fozu_NiudnIRI1KD7R33b-_6y/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/12TTdQ86Fozu_NiudnIRI1KD7R33b-_6y/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+        <div class="so-row on"><div class="so-badge">J</div><span>Know contemporary issues.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        Earning this certificate shows my commitment to continuous learning beyond the classroom, since it follows an industry-recognized training path (SO I). Cloud computing is one of today's most important technologies, and this training kept me aware of how it shapes modern engineering practice (SO J). It also confirms that I can use the concepts and tools of AWS appropriately (SO K).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        This certificate validated what I learned in the AWS activities and gave me an industry-recognized credential to build on. It motivates me to keep pursuing certifications and new skills as I work toward becoming a professional computer engineer.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c3 fi">
+    <p class="art-meta">Artifact 03</p>
+    <h3 class="art-h">Final Project</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">Video Demo</span><span class="art-tag">Documentation</span><span class="art-tag">Final Project</span></div>
+    <p class="art-desc">The final project for Emerging Technologies, presented through a video demo of the working output and the project documentation.</p>
+
+    <div class="vid-wrap">
+      <div class="vid-bar">
+        <div class="dot" style="background:#9b7db0;"></div>
+        <span class="fname">Final Project – Video Demo</span>
+      </div>
+      <iframe class="vid-frame" src="https://drive.google.com/file/d/1rmwFJ0U9gbZKWxYTCKrvp_M9NlPf0MoW/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent3);"></div><span class="fname">Final Project – Project Documentation</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://docs.google.com/presentation/d/1BDJyfsZw5zposZhGqwjeQh1FLi6ugk9Y/edit?usp=drive_link&amp;ouid=114305348274327371687&amp;rtpof=true&amp;sd=true" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1BDJyfsZw5zposZhGqwjeQh1FLi6ugk9Y/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">C</div><span>Design a system, component or process to meet needs within realistic constraints.</span></div>
+        <div class="so-row on"><div class="so-badge">E</div><span>Identify, formulate and solve computer engineering problems.</span></div>
+        <div class="so-row on"><div class="so-badge">G</div><span>Communicate orally and in writing effectively.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        The final project brought together the concepts and tools from Emerging Technologies into one working output. Designing and building it within the limits of the course reflects the ability to design a system that meets a need (SO C), and working through technical problems along the way strengthened my problem-solving (SO E). The video demo and the project documentation let me explain the work clearly to an audience (SO G), and the project made use of modern technologies relevant to computer engineering practice (SO K).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        Finishing the final project showed me that I can take an idea from planning to a working output and present it clearly. Documenting and demonstrating it made me think like both a developer and a user, and it supports my goal of building practical technology that solves real problems.
+      </p>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- ═══════════════════════════════════════════════
+     ARTIFICIAL INTELLIGENCE 2
+═══════════════════════════════════════════════ -->
+<section id="ai2" class="sec">
+  <div class="fi">
+    <p class="sec-lbl">4th Year · 1st Semester · SY 2026-2027</p>
+    <h2 class="sec-h">Artificial Intelligence 2</h2>
+    <p class="sec-d">CPE C314 · Lab activities, IEEE journal project documentation, and the working project demo.</p>
+  </div>
+
+  <div class="art-card c1 fi">
+    <p class="art-meta">Artifact 01</p>
+    <h3 class="art-h">Compilation of Lab Activity</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Lab Work</span><span class="art-tag">Working Notebook</span></div>
+    <p class="art-desc">A compilation of my lab activities in Artificial Intelligence 2, showing the working notebooks and their results.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent);"></div><span class="fname">Compilation of Lab Activity</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1LdEBUUrwo4dysbMp_7smSjYLZMh-5vrS/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1LdEBUUrwo4dysbMp_7smSjYLZMh-5vrS/preview" allowfullscreen></iframe>
+    </div>
+
+    <!--
+      OPTIONAL: to also link the live Colab notebook, paste this under the viewer above and replace YOUR_COLAB_LINK:
+      <a class="btn btn-o" href="YOUR_COLAB_LINK" target="_blank" style="font-size:.8rem;padding:10px 20px;margin-bottom:1.5rem;">Open Working Notebook</a>
+    -->
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">A</div><span>Apply knowledge of mathematics, sciences, and engineering sciences to the practice of computer engineering.</span></div>
+        <div class="so-row on"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
+        <div class="so-row on"><div class="so-badge">E</div><span>Identify, formulate and solve computer engineering problems.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        The AI 2 lab activities required me to apply engineering and mathematical concepts to build and run working notebooks (SO A). Running each notebook meant testing, interpreting outputs, and comparing results (SO B), and fixing errors along the way strengthened my problem-solving skills (SO E). Using modern AI tools and libraries in every lab reflects the use of appropriate techniques and tools for computer engineering practice (SO K).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        The lab activities moved me from understanding AI concepts to making them work in code. Seeing each notebook run and produce real results built my confidence, and every completed lab was a step toward my goal of becoming a computer engineer who can build practical AI systems.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c2 fi">
+    <p class="art-meta">Artifact 02</p>
+    <h3 class="art-h">IEEE Journal Project Documentation</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">IEEE</span><span class="art-tag">Research</span><span class="art-tag">Documentation</span></div>
+    <p class="art-desc">The IEEE-format journal documentation for my Artificial Intelligence 2 project, covering its background, methodology, results, and analysis.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent2);"></div><span class="fname">IEEE Journal Project Documentation</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1_AMstJOjEKcgzwbZcWDajs6MH6KP2n_k/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1_AMstJOjEKcgzwbZcWDajs6MH6KP2n_k/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">B</div><span>Design and conduct experiments as well as analyze and interpret data.</span></div>
+        <div class="so-row on"><div class="so-badge">E</div><span>Identify, formulate and solve computer engineering problems.</span></div>
+        <div class="so-row on"><div class="so-badge">G</div><span>Communicate orally and in writing effectively.</span></div>
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+      </div>
+      <p class="wu-text">
+        Writing the project documentation in IEEE format required me to analyze and interpret the project's results (SO B) and to clearly frame the problem the project addressed (SO E). Presenting the work in a formal, standardized paper developed my ability to communicate in writing (SO G), and researching related work kept me learning beyond the course requirements (SO I).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        Documenting the project in IEEE format taught me how engineering work is reported to the wider technical community. It made me more careful in explaining methods and results, and it supports my goal of one day contributing to AI research.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c3 fi">
+    <p class="art-meta">Artifact 03</p>
+    <h3 class="art-h">Demo Video Working Project</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">Video</span><span class="art-tag">Demo</span><span class="art-tag">Working Project</span></div>
+    <p class="art-desc">A demo video of my Artificial Intelligence 2 project, showing the working system and explaining what it does.</p>
+
+    <div class="vid-wrap">
+      <div class="vid-bar">
+        <div class="dot" style="background:#9b7db0;"></div>
+        <span class="fname">Demo Video Working Project</span>
+      </div>
+      <iframe class="vid-frame" src="https://drive.google.com/file/d/1ob08EvMNwKzNyka6imfpmaII4LSIZCrU/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">C</div><span>Design a system, component or process to meet needs within realistic constraints.</span></div>
+        <div class="so-row on"><div class="so-badge">E</div><span>Identify, formulate and solve computer engineering problems.</span></div>
+        <div class="so-row on"><div class="so-badge">G</div><span>Communicate orally and in writing effectively.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        The demo video shows the project working as designed, which reflects my ability to design a system that meets a need (SO C) and to solve the problems that came up while building it (SO E). Presenting it on video required me to explain the system clearly to an audience (SO G), and the project made use of modern AI tools and technologies (SO K).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        Recording the demo made me look at the project from a user's point of view, not only a developer's. Seeing the finished project work gave me proof of the skills I have been building, and it motivates me to keep making AI systems that are useful to people.
+      </p>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SEMINARS AND FIELD TRIP
+═══════════════════════════════════════════════ -->
+<section id="seminars" class="sec">
+  <div class="fi">
+    <p class="sec-lbl">4th Year · 1st Semester · SY 2026-2027</p>
+    <h2 class="sec-h">Seminars and Field Trip</h2>
+    <p class="sec-d">Certificates, seminar documentation, and an industry visit that took my learning beyond the classroom.</p>
+  </div>
+
+  <div class="art-card c1 fi">
+    <p class="art-meta">Artifact 01</p>
+    <h3 class="art-h">Wadhwani Skilling with AI Certificates</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">Certificate</span><span class="art-tag">Wadhwani</span><span class="art-tag">AI Skills</span></div>
+    <p class="art-desc">Certificates earned from the Wadhwani Skilling with AI program, recognizing the AI skills training I completed.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent);"></div><span class="fname">Wadhwani Skilling with AI Certificates</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1Las9Tp-QwJvwaF_365zaL2TO8h5AwUxm/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1Las9Tp-QwJvwaF_365zaL2TO8h5AwUxm/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+        <div class="so-row on"><div class="so-badge">J</div><span>Know contemporary issues.</span></div>
+        <div class="so-row on"><div class="so-badge">K</div><span>Use appropriate techniques, skills, and modern tools necessary for computer engineering practice.</span></div>
+      </div>
+      <p class="wu-text">
+        Completing the Wadhwani Skilling with AI program shows my commitment to learning outside the regular classroom (SO I). AI is one of today's most discussed technologies, and the training kept me up to date on it (SO J) while introducing me to AI tools and techniques relevant to my field (SO K).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        These certificates reflect effort I took on beyond my class requirements. They gave me additional AI knowledge and a recognized credential, and they motivate me to keep upskilling toward my goal of building practical AI systems.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c2 fi">
+    <p class="art-meta">Artifact 02</p>
+    <h3 class="art-h">Seminars Documentation</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Seminars</span><span class="art-tag">Documentation</span></div>
+    <p class="art-desc">Documentation of the seminars I attended this semester, covering the topics discussed and what I took away from them.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent2);"></div><span class="fname">Seminars Documentation</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1G3MpRNkQlWtA0kcxEmYMGpu_DAjlZWxg/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1G3MpRNkQlWtA0kcxEmYMGpu_DAjlZWxg/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">G</div><span>Communicate orally and in writing effectively.</span></div>
+        <div class="so-row on"><div class="so-badge">H</div><span>Understand the impact of engineering solutions in a global/societal context.</span></div>
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+        <div class="so-row on"><div class="so-badge">J</div><span>Know contemporary issues.</span></div>
+      </div>
+      <p class="wu-text">
+        Attending the seminars exposed me to current topics and practices shared by professional speakers (SO J) and showed how engineering solutions affect people and society (SO H). Documenting each seminar required me to summarize and communicate what I learned in writing (SO G), and attending them reflects continued learning beyond the classroom (SO I).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        The seminars widened my view beyond what I learn in class. Hearing about real industry practice helped me see where my skills can fit, and writing about each seminar helped me reflect on what I want to focus on as I finish my degree.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-card c3 fi">
+    <p class="art-meta">Artifact 03</p>
+    <h3 class="art-h">Field Trip: Schneider Electric Philippines and Hytec</h3>
+    <p class="art-date">1st Semester · SY 2026-2027</p>
+    <div class="art-tags"><span class="art-tag">PDF</span><span class="art-tag">Field Trip</span><span class="art-tag">Industry Visit</span></div>
+    <p class="art-desc">Documentation of our field trip to Schneider Electric Philippines and Hytec, where I saw how engineering is applied in industry.</p>
+
+    <div class="pdf-wrap">
+      <div class="pdf-bar">
+        <div class="pdf-bar-l"><div class="dot" style="background:var(--accent3);"></div><span class="fname">Field Trip: Schneider Electric Philippines and Hytec</span></div>
+        <div class="pdf-bar-r">
+          <a class="ibtn" href="https://drive.google.com/file/d/1kLqolGKbGtBu7mofQeI7y2swfg1nYGK1/view?usp=drive_link" target="_blank">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </a>
+        </div>
+      </div>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1kLqolGKbGtBu7mofQeI7y2swfg1nYGK1/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="wu-wrap">
+      <p class="wu-label">Write-ups</p>
+      <p class="so-title">Learning Outcomes Demonstrated</p>
+      <div class="so-list">
+        <div class="so-row on"><div class="so-badge">H</div><span>Understand the impact of engineering solutions in a global/societal context.</span></div>
+        <div class="so-row on"><div class="so-badge">I</div><span>Engage in life-long learning.</span></div>
+        <div class="so-row on"><div class="so-badge">J</div><span>Know contemporary issues.</span></div>
+      </div>
+      <p class="wu-text">
+        The field trip showed how engineering solutions are used in real industry settings and how they serve people and businesses (SO H). It kept me aware of current technologies and industry practices (SO J), and learning directly from professionals reflects continued learning outside the classroom (SO I).
+      </p>
+      <p class="pg-title">Reflection</p>
+      <p class="wu-text">
+        Seeing real workplaces gave me a clearer picture of what I may do after graduation. It connected the theories from my classes to actual industry practice and helped me think about the skills I still need to build before entering the field.
+      </p>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- ═══════════════════════════════════════════════
+     ORGANIZATIONAL INVOLVEMENT & STUDENT ENGAGEMENT
+═══════════════════════════════════════════════ -->
+<section id="involvement" class="sec">
+  <div class="fi">
+    <p class="sec-lbl">Beyond the Classroom</p>
+    <h2 class="sec-h">Organizational Involvement &amp; Student Engagement</h2>
+    <p class="sec-d">My participation, membership, leadership, and contributions to school organizations, clubs, academic societies, and curricular, co-curricular, and extracurricular activities.</p>
+  </div>
+
+  <div class="blank-state fi">
+    <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M15 14.5c3 0 6 1.5 6 5.5"/></svg>
+    <h3 class="blank-state-h">Coming soon</h3>
+    <p class="blank-state-p">My memberships, leadership roles, and participation in school organizations and activities will be documented here, with certificates, photos, and a reflection for each.</p>
+  </div>
+
+  <!--
+    TO ADD AN INVOLVEMENT: copy the card below, paste it ABOVE the blank-state div, then delete the blank-state div.
+    For each evidence (certificate of membership, appointment letter, event photo, poster/program) use one pdf-wrap
+    block. Google Drive PDFs and images both work with the /preview link.
+
+    <div class="art-card c1 fi">
+      <p class="art-meta">SY 2026-2027</p>
+      <h3 class="art-h">Organization / Event Name</h3>
+      <p class="art-date">Your Role (Member, Officer, Volunteer...)</p>
+      <p class="art-desc">Describe your participation, responsibilities, and contributions to the school or community, and the skills you developed.</p>
+
+      <div class="pdf-wrap">
+        <div class="pdf-bar">
+          <div class="pdf-bar-l"><div class="dot" style="background:#3d5a47;"></div><span class="fname">Certificate of Membership</span></div>
+          <div class="pdf-bar-r"><a class="ibtn" href="YOUR_DRIVE_SHARE_LINK" target="_blank">Open</a></div>
+        </div>
+        <iframe class="pdf-frame" src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" allowfullscreen></iframe>
+      </div>
+
+      <div class="wu-wrap">
+        <p class="wu-label">Write-ups</p>
+        <p class="pg-title" style="margin-top:0;">Reflection</p>
+        <p class="wu-text">Your role, what you learned, and how it contributes to your personal goals.</p>
+      </div>
+    </div>
+  -->
+</section>
+<div class="hr"></div>
+
+<!-- ═══════════════════════════════════════════════
+     ACHIEVEMENTS
+═══════════════════════════════════════════════ -->
+<section id="achievements" class="sec">
+  <div class="fi">
+    <p class="sec-lbl">Growth</p>
+    <h2 class="sec-h">Achievements &amp; Certificates</h2>
+    <p class="sec-d">Certificates and accomplishments such as competitions, workshops, and seminars. I will keep adding to this as my CpE journey continues.</p>
+  </div>
+  <div class="ph-grid fi">
+    <div class="blank-state">
+      <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><polyline points="8.5 14.5 7 22 12 19 17 22 15.5 14.5"/></svg>
+      <h3 class="blank-state-h">Certificates</h3>
+      <p class="blank-state-p">Placeholder for future certificates. My AWS certificate is under <a href="#emtech">Emerging Technologies</a>, and my Wadhwani certificates are under <a href="#seminars">Seminars and Field Trip</a>.</p>
+    </div>
+    <div class="blank-state">
+      <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+      <h3 class="blank-state-h">Competitions, Workshops &amp; Seminars</h3>
+      <p class="blank-state-p">Placeholder. The seminars I have attended so far are under <a href="#seminars">Seminars and Field Trip</a>. More accomplishments will be added here as I take part in more events.</p>
+    </div>
+  </div>
+</section>
+
 <div class="hr"></div>
 
 <!-- SKILLS -->
@@ -787,6 +1309,26 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
     </div>
 
   </div>
+
+  <div class="fi" style="margin-top:3rem;">
+    <p class="sub-h" style="margin-top:0;">Tools &amp; Technologies</p>
+    <div class="chips">
+      <span class="chip g">Jupyter Notebook</span>
+      <span class="chip g">TensorFlow / Keras</span>
+      <span class="chip g">scikit-learn</span>
+      <span class="chip g">Gradio</span>
+      <span class="chip g">TFLite</span>
+      <span class="chip g">AWS (Cloud)</span>
+    </div>
+    <p class="sub-h">Soft Skills</p>
+    <div class="chips">
+      <span class="chip">Communication</span>
+      <span class="chip">Presentation Skills</span>
+      <span class="chip">Teamwork &amp; Collaboration</span>
+      <span class="chip">Analytical Thinking</span>
+      <span class="chip">Problem Solving</span>
+    </div>
+  </div>
 </section>
 
 <div class="hr"></div>
@@ -807,7 +1349,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2.5rem 4re
         GitHub
       </a>
       <a class="ct-link" href="https://linkedin.com/in/yourname" target="_blank">
-        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.35-1.85 3.58 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.78C.8 0 .78 0 1.73v20.54C0 23.22.8 24 1.78 24h20.44C23.2 24 24 23.22 24 22.27V1.73C24 .78 23.2 0 22.22 0z"/></svg>
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.35-1.85 3.58 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.78C.8 0 0 .78 0 1.73v20.54C0 23.22.8 24 1.78 24h20.44C23.2 24 24 23.22 24 22.27V1.73C24 .78 23.2 0 22.22 0z"/></svg>
         LinkedIn
       </a>
     </div>
